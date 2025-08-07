@@ -17,7 +17,7 @@ const App = () => {
     try {
       const response = await axios.get('http://localhost:5000/notes');
       setNotes(response.data);  // Set notes from backend
-    } catch (error) {
+    } catch (error) { //catching errors
       console.error('Error fetching notes:', error);
     }
   };
@@ -26,7 +26,7 @@ const App = () => {
   const handleAddNote = async (note) => {
     try {
       await axios.post('http://localhost:5000/notes', note);
-      fetchNotes();  // Re-fetch notes after adding a new one
+      fetchNotes();  //Re-fetch notes after adding a new one
     } catch (error) {
       console.error('Error adding note:', error);
     }
